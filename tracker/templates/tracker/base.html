@@ -1,0 +1,5 @@
+{% load static %}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% block title %}Product Prep OS{% endblock %}</title><link rel="stylesheet" href="{% static 'tracker/app.css' %}"></head><body>
+<header class="topbar"><a class="brand" href="{% url 'dashboard' %}"><span class="brand-mark">P</span><span>Product Prep OS</span></a><nav><a href="{% url 'dashboard' %}">Dashboard</a><a href="{% url 'roadmap' %}">Roadmap</a><a href="/admin/">Admin</a></nav></header>
+<main class="container">{% if messages %}<div class="toast-stack">{% for message in messages %}<div class="toast {{ message.tags }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% block content %}{% endblock %}</main>
+<footer class="footer">Personal local tracker · Django + PostgreSQL/SQLite · Your progress stays on your machine</footer><script src="{% static 'tracker/app.js' %}"></script></body></html>
